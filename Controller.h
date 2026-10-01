@@ -89,9 +89,9 @@ const uint8_t ribbonCC[2] = {6, 7};  // Optional CC for ribbon data
 #define MUX1_ENABLE 0  // E tied to GND (always enabled)
 
 #define NUM_MUX_BUTTONS 14  // Using C0-C13 (channels 0-13)
+// Fixed: Exactly 14 CC values for 14 buttons
 const uint8_t muxButtonCC[NUM_MUX_BUTTONS] = {
-  10, 11, 12, 13, 14, 15, 16, 17,  // C0-C7
-  18, 19, 20, 21, 22, 23, 24, 25   // C8-C13
+  10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
 };
 
 // ============================================================
