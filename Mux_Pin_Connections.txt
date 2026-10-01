@@ -1,0 +1,40 @@
+MIDI Controller Nano 33 IoT - Mux Pin Connections
+
+=== 74HC44067 16-Channel Mux ===
+(Signals 14 buttons - C0-C15)
+
+Pin Assignment:
+- VCC → 3.3V (Nano 33 IoT)
+- GND → GND (Nano 33 IoT)
+- EN → GND (always enabled)
+- S0 → D2 (pin 2)
+- S1 → D3 (pin 3)
+- S2 → D4 (pin 4)
+- S3 → D5 (pin 5)
+- SIG (Common) → A4 (pin 34)
+
+=== 74HC4051 8-Channel Mux ===
+(2 FSRs + 2 ribbon pots - Y0-Y5)
+
+Pin Assignment:
+- VCC → 3.3V (Nano 33 IoT)
+- GND → GND (Nano 33 IoT)
+- S0 → D2 (pin 2)
+- S1 → D3 (pin 3)
+- S2 → D4 (pin 4)
+- SIG (Common) → A5 (pin 33)
+
+=== Additional Notes ===
+- LED Mapping:
+  - Y2 (Ribbon 1) → Red LED (D10)
+  - Y3 (Ribbon 2) → Yellow LED (D11)
+  - Y4 (FSR 1)    → Blue LED (D12)
+  - Y5 (FSR 2)    → Green LED (D9)
+- Note: Y0 and Y1 are grounded as reference inputs
+- Nano 33 IoT analog pins: A4 and A5 are I2C (SDA/SCL) so use them carefully
+- The muxes share select pins (D2-D4) but use different signal pins (A4 vs A5)
+
+=== Hardware Recommendations ===
+- Add 10K pull-down resistors on mux select lines to prevent floating
+- Consider adding a voltage divider for FSR readings to match 0-1023 range
+- Use boost regulator if signal voltages exceed 3.3V limit
